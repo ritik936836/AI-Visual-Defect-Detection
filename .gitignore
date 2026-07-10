@@ -1,1 +1,5 @@
-model/ 
+venv/
+dataset/
+model/*.keras
+__pycache__/
+output/
