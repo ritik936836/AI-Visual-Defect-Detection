@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Visual Defect Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <h1>AI Visual Defect Detection</h1>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="image" required>
+
+        <br><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    {% if image_path %}
+        <h3>Uploaded Image</h3>
+        <img src="{{ image_path }}" width="300">
+    {% endif %}
+
+    {% if prediction %}
+        <h2>Prediction : {{ prediction }}</h2>
+    {% endif %}
+
+</body>
+</html>
